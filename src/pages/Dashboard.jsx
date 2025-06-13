@@ -14,6 +14,7 @@ import {
   Legend,
 } from 'chart.js';
 import axios from 'axios';
+import {BACKEND_URL} from "../constant"
 import { toast } from 'react-toastify';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, ArcElement, Title, Tooltip, Legend);
@@ -56,7 +57,7 @@ const Dashboard = () => {
   const fetchInProgress = useRef(false);
   const toastId = useRef(null);
 
-  const API_URL = 'http://localhost:5000/api';
+  const API_URL = `${BACKEND_URL}/api`;
 
   const showToast = (message, type = 'error') => {
     console.log(`[Toast] Showing ${type} toast: ${message}`);

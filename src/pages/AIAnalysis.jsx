@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { Loader2, Apple } from 'lucide-react';
+import {BACKEND_URL} from "../constant"
 
 const AIAnalysis = () => {
   const [analysis, setAnalysis] = useState(null);
@@ -20,7 +21,7 @@ const AIAnalysis = () => {
         }
 
         console.log('[AIAnalysis] Fetching AI analysis');
-        const response = await axios.get('http://localhost:5000/api/ai-analysis', {
+        const response = await axios.get(`${BACKEND_URL}/api/ai-analysis`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 

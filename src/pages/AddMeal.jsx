@@ -4,6 +4,8 @@ import { Upload, X, Check, Apple } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import {BACKEND_URL} from "../constant"
+
 
 const AddMeal = () => {
   const [foodName, setFoodName] = useState('');
@@ -16,7 +18,7 @@ const AddMeal = () => {
   const fileInputRef = useRef(null);
   const navigate = useNavigate();
 
-  const API_URL = 'http://localhost:5000/api';
+  const API_URL = `${BACKEND_URL}/api`;
   const token = localStorage.getItem('token');
 
   // Handle drag-and-drop
